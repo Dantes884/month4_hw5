@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+<center>
+    <br>
+    <hr>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title">{{object.title}}</h3>
+    <img src="{{object.image.url}}" alt="" width="200" height="300">
+    <h6 class="card-subtitle mb-2 text-muted">Количество страниц: {{object.quantity}}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">Автор: {{object.author}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Цена: {{object.price}} сом</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Масса: {{object.mass}} грамм</h6>
+    <p class="card-text">{{object.description}}</p>
+    <p class="card-link">Жанр: {{object.genre}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Возрастное ограничение: {{object.age_limit}}+</h6>
+    <a href="{{object.link}}">Кликни для перехода в магазин</a>
+    <button><a href="/book/{{object.id}}/change/">Изменить книгу</a></button>
+    <button><a href="/book/{{object.id}}/delete/">Удалить книгу</a></button>
+    <p>Дата публикации: {{object.created_dates}}</p>
+    <p>Дата обновления: {{object.updated_dates}}</p>
+  </div>
+</div>
+    <br>
+    <hr>
+<div class="p-3 mb-2 bg-info  text-white" style="width: 27rem;">
+    <table border="2">
+        <tr>
+            <td>Дата рейтинга:</td> <td>Оценка:</td> <td>&nbsp;&nbsp;&nbsp;Комментарий:</td>
+        </tr>
+        {% for j in object.comment_object.all %}
+        <tr>
+            <td>{{j.created_date}}</td> <td>&nbsp;&nbsp;&nbsp; {{j.rate}}</td> <td>&nbsp;&nbsp;{{j.comment}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+</center>
+
+{% include 'footer.html' %}

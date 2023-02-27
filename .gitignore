@@ -1,0 +1,7 @@
+.gitignore
+.idea
+venv
+__pycache__/
+month4_hw5.__pycache__/
+book.__pycache__/
+.env

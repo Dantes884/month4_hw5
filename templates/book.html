@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+<center>
+    {% for i in object_list %}
+    <br><br>
+    <hr><hr>
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <a href="/book/{{i.id}}" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
+    <br><br>
+    <hr>
+    <hr>
+    {% endfor %}
+</center>
+
+
+{% include 'footer.html' %}

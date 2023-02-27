@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+<center>
+    <br>
+    <hr>
+<div class="p-3 mb-2 bg-info  text-white" style="width: 25rem;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Вы уверены?</h2>
+        <button type="submit">Да!</button>
+        <button><a href="/book/" style="text-decoration: none; color: black">Нет</a> </button>
+    </form>
+</div>
+    <br>
+    <hr>
+</center>
+{% include 'footer.html' %}
