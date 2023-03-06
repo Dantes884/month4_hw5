@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+<center>
+    <br>
+    <hr>
+<div class="card text-center">
+  <div class="card-header">
+    Пользователи
+  </div>
+  {% for i in object_list %}
+  <div class="card-body">
+    <h5 class="card-title">{{i.username}}</h5>
+  </div>
+  {% endfor %}
+</div>
+    <br>
+    <hr>
+</center>
+{% include 'footer.html' %}
